@@ -1,0 +1,195 @@
+/*
+====================================
+Medium Screen - Others
+====================================
+*/
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+    html {
+        font-size: 56%;
+    }
+
+    .container {
+        max-width: 960px;
+    }
+
+    .hero_cnt h1 {
+        font-size: 5rem;
+    }
+
+    .card_box {
+        min-height: 33.6rem;
+    }
+
+}
+
+/*
+====================================
+Small Screen - Tablate
+====================================
+*/
+@media (max-width: 991px) {
+
+    .hamburger-menu {
+        display: inline-block;
+    }
+
+    .ofcavas-menu {
+        display: block;
+    }
+
+    .hero_area {
+        padding: 7rem 0rem 8.5rem;
+    }
+
+    .hero_cnt h1 {
+        font-size: 4.5rem;
+    }
+
+    .footer_area {
+        padding-top: 3rem;
+    }
+
+    .footer_item {
+        margin-top: 3rem;
+    }
+
+    .technology_area {
+        padding-bottom: 10rem;
+    }
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .container {
+        max-width: 720px;
+    }
+
+    .technology_item {
+        padding-bottom: 0rem;
+    }
+
+    .main_tab .nav-tabs .nav-link {
+        font-size: 1.85rem;
+    }
+
+    .terms-content-area {
+        padding-top: 65px;
+        padding-bottom: 50px;
+    }
+
+    .section-heading {
+        padding-top: 30px;
+        padding-bottom: 25px;
+    }
+    
+    
+    .single-pera {
+        margin-bottom: 20px;
+    }
+
+}
+
+/*
+====================================
+Small Screen - Mobile
+====================================
+*/
+@media screen and (max-width: 767px) {
+
+    html {
+        font-size: 48%;
+    }
+
+    .container {
+        max-width: 540px;
+    }
+
+    .hero_cnt h1 {
+        font-size: 4rem;
+    }
+
+    .hero_cnt {
+        margin-top: 3rem;
+    }
+
+    .card_box h4 {
+        font-size: 2.2rem;
+    }
+
+    .card_box p {
+        font-size: 1.8rem;
+    }
+
+    .technology_area {
+        padding: 0rem 0rem 9rem;
+    }
+
+
+    .main_tab .nav-tabs li {
+        width: 50%;
+    }
+
+    .main_tab .nav-tabs .nav-link {
+        padding: 1.2rem 1rem;
+    }
+
+    .technology_item ul li {
+        font-size: 1.85rem;
+    }
+
+    .technology_item {
+        padding-bottom: 0rem;
+    }
+
+    .footer_item h4 {
+        font-size: 2.4rem;
+    }
+
+    .footer_item ul li,
+    .footer_item ul li a {
+        font-size: 1.8rem;
+    }
+
+    .footer_item input,
+    .footer_item button {
+        font-size: 1.8rem;
+    }
+
+    .footer_bottom {
+        display: block;
+        text-align: center;
+    }
+
+    .footer_bottom ul {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .back-to-top {
+        right: 2rem;
+        bottom: 2.5rem;
+    }
+
+    .terms-content-area {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .section-heading {
+        padding-top: 25px;
+        padding-bottom: 20px;
+    }
+    
+    
+    .single-pera {
+        margin-bottom: 15px;
+    }
+    
+
+}
