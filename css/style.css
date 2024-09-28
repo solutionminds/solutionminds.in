@@ -367,6 +367,11 @@ body {
 	font-size: 1.6rem;
 	font-weight: 400;
 	color: #666666;
+	text-align: justify; 
+	word-break: break-all;
+
+
+
 }
 
 .card_box:hover {
@@ -380,78 +385,129 @@ body {
 
 /*================= technology_area start =====================*/
 .technology_area {
-	padding: 2rem 0 8rem;
+    padding: 2rem 0 8rem;
 }
 
 .technology_item {
-	padding: 4rem 2rem;
+    padding: 4rem 2rem;
 }
 
+/* Full-width container for the tabs */
 .main_tab {
-	max-width: 105rem;
-	width: 100%;
-	margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .main_tab .nav-tabs {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	border: 1px solid #ddd;
-	border-radius: 0.5rem;
-	margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    margin-top: 4rem;
 }
 
 .main_tab .nav-tabs li {
-	width: 25%;
+    width: 25%;
 }
 
 .main_tab .nav-tabs .nav-link {
-	font-size: 2rem;
-	font-weight: 700;
-	color: #333333;
-	text-transform: uppercase;
-	border: none;
-	background: transparent;
-	border-radius: 0rem;
-	display: block;
-	text-align: center;
-	padding: 1rem 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333333;
+    text-transform: uppercase;
+    border: none;
+    background: transparent;
+    border-radius: 0rem;
+    display: block;
+    text-align: center;
+    padding: 1rem 1rem;
 }
 
 .main_tab .nav-tabs .nav-link.active {
-	background: #014BAB;
-	color: #FFF;
+    background: #014BAB;
+    color: #FFF;
+}
+
+/* Grid layout for technology items */
+.technology_item ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
 }
 
 .technology_item ul li {
-	font-family: "SUSE", sans-serif;
-	font-size: 2.1rem;
-	font-weight: 400;
-	color: #666;
-	margin-bottom: 18px;
-	display: flex;
-	align-items: center;
-	gap: 10px;
+    font-family: "SUSE", sans-serif;
+    font-size: 2.1rem;
+    font-weight: 400;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
 }
+
+/* Icon inside each list item */
 .technology_item ul li img {
-	max-width: 25px;
-	transition: 0.3s;
+    max-width: 25px;
+    transition: 0.3s;
 }
+
 .technology_item ul li:hover span img {
-	transform: scale(1.4);
+    transform: scale(1.4);
 }
+
 .technology_item ul li span {
-	display: inline-block;
-	width: 60px;
-	height: 60px;
-	background-color: rgba(1, 75, 171,0.1);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50%;
-	overflow: hidden;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(1, 75, 171, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
 }
+
+/* Media query for screens 400px and below */
+@media (max-width: 400px) {
+    /* Adjust grid to show at least 2 items per row */
+    .technology_item ul {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 items per row */
+        gap: 1rem; /* Reduce gap */
+    }
+
+    /* Reduce icon sizes */
+    .technology_item ul li img {
+        max-width: 20px; /* Smaller icons */
+    }
+
+    /* Reduce circle size */
+    .technology_item ul li span {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Adjust text size */
+    .technology_item ul li {
+        font-size: 1.6rem; /* Smaller text */
+        padding: 0; /* Remove padding on list items */
+        margin: 0; /* Remove margin on list items */
+		margin-top: 10px;
+    }
+
+    /* Reset padding/margin on the overall container */
+    .technology_area, .technology_item {
+        padding: 0; /* Remove padding */
+        margin: 0;  /* Remove margin */
+		margin-top: 20px;
+    }
+}
+
 
 /*=================== footer_area start =====================*/
 .footer_area {
