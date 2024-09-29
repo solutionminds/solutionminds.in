@@ -304,6 +304,10 @@ body {
 	display: block;
 	margin: 0 auto;
 }
+@media (max-width: 450px) {
+    .hero_item img {
+        max-width: 80%; 
+    }
 
 /*===================== service_area start ========================*/
 .service_area {
