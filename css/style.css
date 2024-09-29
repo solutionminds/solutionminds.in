@@ -249,8 +249,9 @@ body {
 }
 
 .ofcavas-menu .menu_links a {
-	font-size: 1.85rem;
-	margin: 0;
+    font-size: 2.4rem;
+    margin: 0;
+    margin-top: 20px;
 }
 
 /*========== return-to-top ==========*/
@@ -310,10 +311,6 @@ body {
     }
 	.hero_cnt h1{
 		text-align: center;
-	}
-
-	.menu_links ul li a {
-		font-size: 2.2rem;
 	}
 
 }
