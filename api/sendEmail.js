@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 export default async function (req, res) {
   if (req.method === 'POST') {
-    const { name, email, message } = req.body;
+    const { name, email, phone } = req.body; // Capture name, email, and phone
 
     const response = await fetch('https://api.postmarkapp.com/email', {
       method: 'POST',
@@ -14,7 +14,7 @@ export default async function (req, res) {
         "From": "info@deedcrm.com",
         "To": "sales@solutionminds.in",
         "Subject": "New Contact Form Submission",
-        "HtmlBody": `<strong>Name:</strong> ${name}<br/><strong>Email:</strong> ${email}<br/><strong>Message:</strong> ${message}`,
+        "HtmlBody": `<strong>Name:</strong> ${name}<br/><strong>Email:</strong> ${email}<br/><strong>Phone:</strong> ${phone}`, // Include phone
         "MessageStream": "outbound"
       })
     });

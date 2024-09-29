@@ -326,22 +326,22 @@
     <script>
         document.getElementById('contactForm').addEventListener('submit', async function (e) {
           e.preventDefault();  // Prevents form from submitting the traditional way
-      
+        
           const name = document.getElementById('name').value;
           const email = document.getElementById('email').value;
           const phone = document.getElementById('phone').value;
-      
+        
           try {
             // Sending POST request to the Vercel serverless function
-            const response = await fetch('/js/sendEmail.js', {
+            const response = await fetch('/api/sendEmail', { // Corrected URL
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ name, email, phone }) // Send form data
+              body: JSON.stringify({ name, email, phone }) // Send form data without message
             });
-      
+        
             // Parsing the response from the serverless function
             const result = await response.json();
-      
+        
             if (response.ok) {
               // If the email was successfully sent
               alert('Success! Your message has been sent.');
@@ -355,6 +355,7 @@
             console.error('Error:', error);  // Logging the error for debugging purposes
           }
         });
-      </script>
+        </script>
+        
 </body>
 </html>
