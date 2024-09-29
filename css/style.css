@@ -174,6 +174,10 @@ body {
 	border-radius: 0.5rem;
 }
 
+.menu_links ul li.active .contact_btn {
+	color: #FFF; /* Set color to white */
+}
+
 .menu_links ul li .contact_btn:hover {
 	opacity: 0.85;
 	background: #004AAB;
