@@ -45,7 +45,7 @@
                             <li><a href="#" data-scroll="service">Services</a></li>
                             <li><a href="#" data-scroll="technology">Technologies</a></li>
                             <li><a href="#" data-scroll="about">About Us</a></li>
-                            <li><a href="#" class="contact_btn">Contact</a></li>
+                            <li><a href="#" data-scroll="about" class="contact_btn">Contact</a></li>
                         </ul>
                     </div>
                     <div class="hamburger_btn d-lg-none">
@@ -99,12 +99,12 @@
         <!-- hero_area end -->
 
         <!-- service_area start -->
-        <section class="service_area" id="service">
-            <div class="container">
-                <div class="title_cnt text-center wow fadeInUp">
+        <section class="service_area" >
+            <div class="container" >
+                <div class="title_cnt text-center wow fadeInUp" >
                     <h2 class="wow fadeInUp">Services</h2>
                 </div>
-                <div class="row wow fadeInUp">
+                <div class="row wow fadeInUp" id="service">
                     <div class="col-md-6 col-lg-4">
                         <div class="card_box wow fadeInUp">
                             <div class="card_icon">
@@ -285,10 +285,10 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="footer_item wow fadeInUp">
                         <h4 class="wow fadeInUp">Contact</h4>
-                        <form action="#">
-                            <input class="wow fadeInUp" type="text" placeholder="Name" required>
-                            <input class="wow fadeInUp" type="email" placeholder="Email" required>
-                            <input class="wow fadeInUp" style="display: none;" type="tel" placeholder="Phone" required>
+                        <form action="#" id="contactForm">
+                            <input class="wow fadeInUp" id="name" name="name" type="text" placeholder="Name" required>
+                            <input class="wow fadeInUp"  id="email" name="email" type="email" placeholder="Email" required>
+                            <input class="wow fadeInUp" id="phone_no" name="phone_no" style="display: none;" type="tel" placeholder="Phone" required>
                             <div id="result" class="wow fadeInUp">
                                 <input id="phone" type="tel">
                                 <span id="valid-msg" class="hide">✓ Valid</span>
@@ -322,5 +322,24 @@
     <script src="js/utils.js"></script>
     <script src="js/telinput.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+          e.preventDefault();
+      
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const phone_no = document.getElementById('phone_no').value;
+      
+          const response = await fetch('/api/sendEmail', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, phone_no })
+          });
+      
+          const result = await response.json();
+          alert(result.message || 'Something went wrong');
+        });
+      </script>
 </body>
 </html>
