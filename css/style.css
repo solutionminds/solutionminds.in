@@ -308,6 +308,9 @@ body {
     .hero_item img {
         max-width: 80%; 
     }
+	.hero_cnt h1{
+		text-align: center;
+	}
 
 /*===================== service_area start ========================*/
 .service_area {
