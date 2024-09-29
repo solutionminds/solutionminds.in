@@ -291,8 +291,8 @@
                             <input class="wow fadeInUp" id="phone_no" name="phone_no" style="display: none;" type="tel" placeholder="Phone" required>
                             <div id="result" class="wow fadeInUp">
                                 <input id="phone" type="tel">
-                                <span id="valid-msg" class="hide">✓ Valid</span>
-                                <span id="error-msg" class="hide"></span>
+                                <span id="valid-msg" style="display: none;" class="hide">✓ Valid</span>
+                                <span id="error-msg" style="display: none;" class="hide"></span>
                             </div>
                             <button class="wow fadeInUp" type="submit">Submit</button>
                         </form>
@@ -325,20 +325,35 @@
 
     <script>
         document.getElementById('contactForm').addEventListener('submit', async function (e) {
-          e.preventDefault();
+          e.preventDefault();  // Prevents form from submitting the traditional way
       
           const name = document.getElementById('name').value;
           const email = document.getElementById('email').value;
-          const phone_no = document.getElementById('phone_no').value;
+          const message = document.getElementById('message').value;
       
-          const response = await fetch('/api/sendEmail', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, phone_no })
-          });
+          try {
+            // Sending POST request to the Vercel serverless function
+            const response = await fetch('/js/sendEmail', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name, email, message }) // Send form data
+            });
       
-          const result = await response.json();
-          alert(result.message || 'Something went wrong');
+            // Parsing the response from the serverless function
+            const result = await response.json();
+      
+            if (response.ok) {
+              // If the email was successfully sent
+              alert('Success! Your message has been sent.');
+            } else {
+              // If there was a problem with the email sending process
+              alert('Oops! Something went wrong: ' + (result.error || 'Unknown error'));
+            }
+          } catch (error) {
+            // Catch any other errors (e.g., network issues)
+            alert('Error! Unable to send your message.');
+            console.error('Error:', error);  // Logging the error for debugging purposes
+          }
         });
       </script>
 </body>
