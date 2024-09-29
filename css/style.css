@@ -312,6 +312,12 @@ body {
 		text-align: center;
 	}
 
+	.menu_links ul li a {
+		font-size: 2.2rem;
+	}
+
+}
+
 /*===================== service_area start ========================*/
 .service_area {
 	padding: 10rem 0;
