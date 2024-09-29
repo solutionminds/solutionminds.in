@@ -333,7 +333,7 @@
       
           try {
             // Sending POST request to the Vercel serverless function
-            const response = await fetch('/js/sendEmail', {
+            const response = await fetch('/js/sendEmail.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ name, email, phone }) // Send form data
