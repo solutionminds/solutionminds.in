@@ -329,14 +329,14 @@
       
           const name = document.getElementById('name').value;
           const email = document.getElementById('email').value;
-          const message = document.getElementById('message').value;
+          const phone = document.getElementById('phone').value;
       
           try {
             // Sending POST request to the Vercel serverless function
             const response = await fetch('/js/sendEmail', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ name, email, message }) // Send form data
+              body: JSON.stringify({ name, email, phone }) // Send form data
             });
       
             // Parsing the response from the serverless function
